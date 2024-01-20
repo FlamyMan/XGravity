@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Assets.code
 {
-    [RequireComponent (typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour
     {
         private const string Climbable = "Climbable";
@@ -19,14 +19,14 @@ namespace Assets.code
         [SerializeField] private float _jumpForce;
 
         private Rigidbody rb;
-        private bool _canBeRotated = true;
         private Vector3 _normal;
         private State _currentState = State.walk;
-        
 
-        public State CurrentState { 
-            get { return _currentState; } 
-            private set { ChangeState(value); } 
+
+        public State CurrentState
+        {
+            get { return _currentState; }
+            private set { ChangeState(value); }
         }
 
         private void Awake()
@@ -40,8 +40,6 @@ namespace Assets.code
             if (!collision.gameObject.CompareTag(nameof(Climbable))) return;
             _normal = collision.GetContact(0).normal;
             CurrentState = State.climb;
-
-            transform.rotation.SetFromToRotation(Vector3.zero, -_normal);
         }
 
         private void OnCollisionExit(Collision collision)
@@ -55,12 +53,10 @@ namespace Assets.code
             switch (newState)
             {
                 case State.walk:
-                    _canBeRotated = true;
                     rb.useGravity = true;
                     _currentState = State.walk;
                     break;
                 case State.climb:
-                    _canBeRotated = false;
                     rb.useGravity = false;
                     rb.velocity = Vector3.zero;
                     _currentState = State.climb;
@@ -69,14 +65,7 @@ namespace Assets.code
                     break;
             }
         }
-
-        public bool TryRotate(Vector3 eulers)
-        {
-            if (!_canBeRotated) return false;
-
-            transform.Rotate(eulers);
-            return true;
-        }
+        
 
         public void Jump(InputAction.CallbackContext context)
         {
@@ -91,14 +80,14 @@ namespace Assets.code
                 default:
                     break;
             }
-            
+
         }
 
         private void GroundJump()
         {
             if (IsOnGround())
             {
-                rb.AddForce(new(0, _jumpForce, 0), ForceMode.Impulse);
+                rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             }
         }
 
@@ -116,7 +105,7 @@ namespace Assets.code
             return false;
         }
 
-        
+
         public void Move(Vector3 input)
         {
             switch (CurrentState)
@@ -134,10 +123,12 @@ namespace Assets.code
 
         private void ClimbMove(Vector3 input)
         {
-            if(CurrentState != State.climb) throw new Exception("The Unit cant climb right now!");
+            if (CurrentState != State.climb) throw new Exception("The Unit cant climb right now!");
 
-            Vector3 movement = _climbSpeed * Time.deltaTime * new Vector3(input.x, input.y, 0f);
-            transform.Translate(movement);
+            Vector3 xDirection = new(-_normal.z, 0, _normal.x);
+            var scaledSpeed = _climbSpeed * Time.deltaTime;
+            var translation = (xDirection * input.x + Vector3.up * input.y) * scaledSpeed;
+            transform.position += translation;
         }
 
         private void WalkMove(Vector3 input)

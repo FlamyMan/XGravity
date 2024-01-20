@@ -28,7 +28,7 @@ namespace Assets.code
             Vector3 cameraRotation = new Vector3(-_lookDirection.y, 0f, 0f) * scaledLookSpeed;
             Vector3 objRotation = new Vector3(0f, _lookDirection.x, 0f) * scaledLookSpeed;
 
-            movement.TryRotate(objRotation);
+            transform.Rotate(objRotation);
             _camera.Rotate(cameraRotation);
         }
 
