@@ -21,8 +21,6 @@ namespace Assets.code
 
         private void Look()
         {
-            if (_lookDirection.sqrMagnitude < 0.1f) return;
-
             float scaledLookSpeed = _lookSpeed * Time.deltaTime;
 
             Vector3 cameraRotation = new Vector3(-_lookDirection.y, 0f, 0f) * scaledLookSpeed;
@@ -34,8 +32,6 @@ namespace Assets.code
 
         private void Move()
         {
-            if (_moveDirection.sqrMagnitude < 0.1f) return;
-
             movement.Move(_moveDirection);
         }
 

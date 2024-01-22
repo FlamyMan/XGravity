@@ -18,6 +18,7 @@ namespace Assets.code
         [SerializeField] private float _climbSpeed;
         [SerializeField] private float _jumpForce;
 
+        private CapsuleCollider _playerCollider;
         private Rigidbody rb;
         private Vector3 _normal;
         private State _currentState = State.walk;
@@ -32,6 +33,7 @@ namespace Assets.code
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            _playerCollider = rb.GetComponent<CapsuleCollider>();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -98,13 +100,14 @@ namespace Assets.code
 
         private bool IsOnGround()
         {
-            if (rb.velocity.y == 0)
+            Vector3 origin = _playerCollider.ClosestPoint(transform.position - new Vector3(0, _playerCollider.height, 0)) + Vector3.up * 0.1f;
+            Ray ray = new Ray(origin, Vector3.down);
+            if (Physics.Raycast(ray, 0.2f))
             {
                 return true;
             }
             return false;
         }
-
 
         public void Move(Vector3 input)
         {
@@ -126,8 +129,9 @@ namespace Assets.code
             if (CurrentState != State.climb) throw new Exception("The Unit cant climb right now!");
 
             Vector3 xDirection = new(-_normal.z, 0, _normal.x);
-            var scaledSpeed = _climbSpeed * Time.deltaTime;
-            var translation = (xDirection * input.x + Vector3.up * input.y) * scaledSpeed;
+            float scaledSpeed = _climbSpeed * Time.deltaTime;
+
+            Vector3 translation = (xDirection * input.x + Vector3.up * input.y) * scaledSpeed;
             transform.position += translation;
         }
 
