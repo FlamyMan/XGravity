@@ -101,7 +101,7 @@ namespace Assets.code
         private bool IsOnGround()
         {
             Vector3 origin = _playerCollider.ClosestPoint(transform.position - new Vector3(0, _playerCollider.height, 0)) + Vector3.up * 0.1f;
-            Ray ray = new Ray(origin, Vector3.down);
+            Ray ray = new(origin, Vector3.down);
             if (Physics.Raycast(ray, 0.2f))
             {
                 return true;
