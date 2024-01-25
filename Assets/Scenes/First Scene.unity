@@ -164,14 +164,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 35126377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.7
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 0.7
+  _LookSpeed: 1
 --- !u!1 &53218161
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,14 +213,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 53218161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.7
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 0.7
+  _LookSpeed: 1
 --- !u!1001 &107094520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   - {fileID: 35126379}
   - {fileID: 516023152}
   - {fileID: 53218163}
-  - {fileID: 1568787621}
+  - {fileID: 1568787622}
 --- !u!1 &515258755
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,14 +523,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 515258755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.7
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 0.7
+  _LookSpeed: 1
 --- !u!1 &516023150
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,11 +572,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 516023150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.7
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls:
@@ -592,6 +590,8 @@ MonoBehaviour:
           m_StringArgument: trOpen
           m_BoolArgument: 0
         m_CallState: 2
+  _speed: 0.7
+  _LookSpeed: 1
 --- !u!1 &595553585
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,14 +633,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 595553585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.7
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 0.7
+  _LookSpeed: 1
 --- !u!1 &696743040
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,14 +792,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 842277514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.7
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 0.7
+  _LookSpeed: 1
 --- !u!1 &874792201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,11 +1174,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227084853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.02
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls:
@@ -1194,6 +1192,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _speed: 0.02
+  _LookSpeed: 1
 --- !u!1 &1287261721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,14 +1275,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1361108060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.7
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 0.7
+  _LookSpeed: 1
 --- !u!1 &1519427561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ GameObject:
   - component: {fileID: 1519427563}
   - component: {fileID: 1519427562}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Broadcast Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1320,8 +1320,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 2
-  MaxDistance: 8
+  MinDistance: 1
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1420,8 +1420,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1568787620}
-  - component: {fileID: 1568787621}
   - component: {fileID: 1568787622}
+  - component: {fileID: 1568787623}
   m_Layer: 0
   m_Name: Pointer (8)
   m_TagString: Untagged
@@ -1444,7 +1444,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1287261722}
   m_LocalEulerAnglesHint: {x: -45.557, y: 0, z: 0}
---- !u!114 &1568787621
+--- !u!114 &1568787622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1453,27 +1453,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1568787619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1568787619}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 1568787623}
+        m_TargetAssemblyTypeName: Assets.Scripts.NextLevelEnterer, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1568787622
+  _speed: 2
+  _LookSpeed: 1
+--- !u!114 &1568787623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1794,14 +1794,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724015022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 50
+  _LookSpeed: 1
 --- !u!1 &1775651110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,14 +1843,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1775651110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99bdcab0f353b341b267c98035c1314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09cbd107eb449469bb1dfb8379a6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 50
-  _LookSpeed: 1
   OnReached:
     m_PersistentCalls:
       m_Calls: []
+  _speed: 40
+  _LookSpeed: 1
 --- !u!1 &1871625855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1862,7 @@ GameObject:
   - component: {fileID: 1871625857}
   - component: {fileID: 1871625856}
   m_Layer: 0
-  m_Name: Audio Source (1)
+  m_Name: Pizza audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

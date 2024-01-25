@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.code
+namespace Assets.Scripts
 {
     public class PressureButton : MonoBehaviour
     {

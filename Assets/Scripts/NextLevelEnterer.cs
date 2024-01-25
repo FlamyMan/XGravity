@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.code
+namespace Assets.Scripts
 {
     public class NextLevelEnterer : MonoBehaviour
     {
         public void NextLevel()
         {
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.buildIndex + 1);
         }
     }
 }

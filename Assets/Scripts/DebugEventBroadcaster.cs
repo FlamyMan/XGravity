@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.code
+namespace Assets.Scripts
 {
     public class DebugEventBroadcaster : MonoBehaviour
     {

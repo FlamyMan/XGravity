@@ -2,7 +2,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 
-public class QuestBroadcasterFirstScene : MonoBehaviour
+public class QuestBroadcaster : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
     [SerializeField] private string _path;
