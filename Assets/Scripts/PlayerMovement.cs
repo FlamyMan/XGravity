@@ -41,6 +41,7 @@ namespace Assets.Scripts
             Vector3 point = collision.GetContact(0).point;
             if (!collision.gameObject.CompareTag(nameof(Climbable))) return;
             _normal = collision.GetContact(0).normal;
+            if ((_normal - transform.up).sqrMagnitude <= 0.3) return;
             CurrentState = State.climb;
         }
 

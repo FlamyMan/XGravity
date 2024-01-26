@@ -122,34 +122,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnActivation:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3100250206012550734}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: trPress
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnDeactivation:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3100250206012550734}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: trUnpress
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!95 &8573179747127974841
 Animator:
   serializedVersion: 5

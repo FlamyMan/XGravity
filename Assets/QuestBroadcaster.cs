@@ -16,11 +16,11 @@ public class QuestBroadcaster : MonoBehaviour
         _nextTime = Time.time;
         string rawJson = File.ReadAllText(_path);
         _parsedText = JsonUtility.FromJson<BroadcastMessages>(rawJson);
+        if (_parsedText == null) throw new System.ArgumentException();
     }
 
     private void Update()
     {
-
         if (Time.time > _nextTime)
         {
             if (_currentNumber >= _parsedText.lines.Length)
@@ -32,7 +32,6 @@ public class QuestBroadcaster : MonoBehaviour
             _nextTime += _parsedText.durations[_currentNumber];
             _text.text = _parsedText.lines[_currentNumber];
             _currentNumber++;
-
         }
     }
 
