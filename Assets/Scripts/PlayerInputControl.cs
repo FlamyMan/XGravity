@@ -10,7 +10,9 @@ namespace Assets.Scripts
         [SerializeField] private Camera _camera;
         [SerializeField] private PlayerMovement movement;
         [SerializeField] private float _lookSpeed;
+        [SerializeField] private GameObject _pauseMenu;
 
+        private bool _pauseMode = false;
         private Vector2 _moveDirection;
         private Vector2 _lookDirection;
         
@@ -19,6 +21,24 @@ namespace Assets.Scripts
             _playerInput = new();
             _playerInput.Player.Jump.started += movement.Jump;
             _playerInput.Player.Interact.started += OnInteraction;
+            _playerInput.Player.Pause.started += OnPause;
+        }
+
+        private void OnPause(InputAction.CallbackContext context)
+        {
+            _pauseMode = !_pauseMode;
+            _pauseMenu.SetActive(_pauseMode);
+            switch (_pauseMode)
+            {   
+                case true:
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    break;
+                case false:
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+                    break;
+            }
         }
 
         private void Look()
@@ -41,9 +61,11 @@ namespace Assets.Scripts
         {
             _moveDirection = _playerInput.Player.Move.ReadValue<Vector2>();
             _lookDirection = _playerInput.Player.Look.ReadValue<Vector2>();
-
-            Look();
-            Move();
+            if (!_pauseMode)
+            {
+                Look();
+                Move();
+            }
         }
 
         private void OnInteraction(InputAction.CallbackContext context)

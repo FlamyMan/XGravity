@@ -15,7 +15,7 @@ namespace Assets.Scripts
             if (_rotate == null || _player == null || _rotation == null) throw new NullReferenceException();
 
             _rotate.Rotate(_rotation, _angle);
-            _player.rotation = Quaternion.Euler(0, 0, 0);
+            _player.rotation = Quaternion.Euler(0, _player.rotation.eulerAngles.y, 0) ;
         }
     }
 }
