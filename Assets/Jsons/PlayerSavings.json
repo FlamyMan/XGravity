@@ -1,0 +1,7 @@
+{
+	"id": 1,
+	"AudioSaves": {
+		"Mixer": ["Master", "Music", "SFX", "Voice"],
+		"SavedName": ["masterVol", "musicVol", "SFXVol", "voiceVol"]
+	}
+}

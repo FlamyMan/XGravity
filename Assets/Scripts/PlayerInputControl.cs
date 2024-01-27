@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Assets.Scripts
 {
@@ -6,7 +7,7 @@ namespace Assets.Scripts
     {
         private PlayerInput _playerInput;
 
-        [SerializeField] private Transform _camera;
+        [SerializeField] private Camera _camera;
         [SerializeField] private PlayerMovement movement;
         [SerializeField] private float _lookSpeed;
 
@@ -17,6 +18,7 @@ namespace Assets.Scripts
         {
             _playerInput = new();
             _playerInput.Player.Jump.started += movement.Jump;
+            _playerInput.Player.Interact.started += OnInteraction;
         }
 
         private void Look()
@@ -27,7 +29,7 @@ namespace Assets.Scripts
             Vector3 objRotation = new Vector3(0f, _lookDirection.x, 0f) * scaledLookSpeed;
 
             transform.Rotate(objRotation);
-            _camera.Rotate(cameraRotation);
+            _camera.transform.Rotate(cameraRotation);
         }
 
         private void Move()
@@ -42,6 +44,28 @@ namespace Assets.Scripts
 
             Look();
             Move();
+        }
+
+        private void OnInteraction(InputAction.CallbackContext context)
+        {
+            Ray ray = _camera.ScreenPointToRay(new Vector2(_camera.scaledPixelWidth, _camera.scaledPixelHeight) * 0.5f);
+            if (Physics.Raycast(ray, out RaycastHit hit, 3f))
+            {
+                GameObject obj = hit.collider.gameObject;
+                IInteractable interactable;
+                if (obj.TryGetComponent(out interactable))
+                {
+                    interactable.Interact();
+                }
+                else
+                {
+                    print(obj.name);
+                }
+            }
+            else
+            {
+                Debug.DrawRay(ray.origin, ray.direction, Color.green, float.PositiveInfinity);
+            }
         }
 
         private void OnEnable()

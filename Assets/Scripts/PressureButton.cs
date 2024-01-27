@@ -5,6 +5,8 @@ namespace Assets.Scripts
 {
     public class PressureButton : MonoBehaviour
     {
+        [SerializeField] private Animator _animator;
+
         private bool _pressed = false;
         private int _collisionsCount;
 
@@ -17,6 +19,7 @@ namespace Assets.Scripts
             if (_collisionsCount > 0 && !_pressed)
             {
                 _pressed = true;
+                _animator.SetTrigger("trPress");
                 OnActivation?.Invoke();
             }
         }
@@ -27,6 +30,7 @@ namespace Assets.Scripts
             if (_collisionsCount == 0 && _pressed)
             {
                 _pressed = false;
+                _animator.SetTrigger("trUnpress");
                 OnDeactivation?.Invoke();
             }
         }
