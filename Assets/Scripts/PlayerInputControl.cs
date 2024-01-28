@@ -79,10 +79,6 @@ namespace Assets.Scripts
                 {
                     interactable.Interact();
                 }
-                else
-                {
-                    print(obj.name);
-                }
             }
             else
             {

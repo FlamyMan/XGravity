@@ -21,8 +21,12 @@ namespace Assets.Scripts
         private CapsuleCollider _playerCollider;
         private Rigidbody rb;
         private Vector3 _normal;
+        private Vector3 _lastPosition;
         private State _currentState = State.walk;
+        private bool _WasWalking;
 
+        public event Action WalkStarted;
+        public event Action WalkEnded;
 
         public State CurrentState
         {
@@ -49,6 +53,26 @@ namespace Assets.Scripts
         {
             if (!collision.gameObject.CompareTag(nameof(Climbable))) return;
             CurrentState = State.walk;
+        }
+
+        private void Update()
+        {
+            if((transform.position - _lastPosition).sqrMagnitude <= 0.0001f || !IsOnGround())
+            {
+                WalkEnded?.Invoke();
+                _WasWalking = false;
+                return;
+            }
+
+            if (transform.position != _lastPosition)
+            {
+                if (!_WasWalking)
+                {
+                    _WasWalking = true;
+                    WalkStarted?.Invoke();
+                }
+            }
+            _lastPosition = transform.position;
         }
 
         private void ChangeState(State newState)
